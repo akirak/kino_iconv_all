@@ -1,0 +1,23 @@
+# How to use `iconv_all_git` inside Livebook
+
+```elixir
+Mix.install([
+  {:kino_iconv_all_git, github: "akirak/kino_iconv_all"}
+])
+```
+
+## Configure a Git repository
+
+```elixir
+alias Kino.IconvAll.Git, as: KinoIconvGit
+
+config =
+  Path.join([System.get_env("HOME"), "path-to", "your-repository"])
+  |> KinoIconvGit.configure()
+
+KinoIconvGit.render(config)
+```
+
+```elixir
+{:ok, datadir} = Kino.IconvAll.Git.run(config)
+```
