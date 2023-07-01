@@ -3,7 +3,7 @@ defmodule Kino.IconvAll.Git.MixProject do
 
   def project do
     [
-      app: :kino_iconv_all,
+      app: :kino_iconv_all_git,
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
