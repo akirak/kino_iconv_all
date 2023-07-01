@@ -1,21 +1,8 @@
 # Kino.IconvAll.Git
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `kino_iconv_all` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:kino_iconv_all, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/kino_iconv_all>.
-
+This is a [Kino](https://github.com/livebook-dev/kino)-based user interface for
+[Livebook](https://livebook.dev/) that lets you configure and perform conversion
+of character encoding using iconv. It is a wrapper around
+[iconv_all](https://github.com/akirak/iconv_all), which converts all files
+matching a glob pattern in a Git repository. It is intended for helping with
+interactive analysis of code base in a legacy encoding.
