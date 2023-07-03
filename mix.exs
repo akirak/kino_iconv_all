@@ -22,7 +22,7 @@ defmodule Kino.IconvAll.Git.MixProject do
   defp deps do
     [
       {:kino, "~> 0.9.4"},
-      {:iconv_all_git, github: "akirak/iconv_all"}
+      {:iconv_all_git, github: "akirak/iconv_all", tag: "0.0.1"}
     ]
   end
 end
