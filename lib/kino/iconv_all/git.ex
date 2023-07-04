@@ -35,6 +35,7 @@ defmodule Kino.IconvAll.Git do
           "Target encoding",
           Enum.map(@supported_encodings, &{&1, &1})
         ),
+      discard: Input.checkbox("Omit invalid characters instead of failing"),
       xml_support: Input.checkbox("Enable processing of XML (*.xml)", default: true)
     }
   end
@@ -50,6 +51,7 @@ defmodule Kino.IconvAll.Git do
       config.branch,
       config.source_encoding,
       config.target_encoding,
+      config.discard,
       config.xml_support
     ])
   end
@@ -66,6 +68,7 @@ defmodule Kino.IconvAll.Git do
       pattern: Input.read(config.pattern),
       source_encoding: Input.read(config.source_encoding),
       target_encoding: Input.read(config.target_encoding),
+      discard: Input.read(config.discard),
       xml_support: Input.read(config.xml_support)
     })
   end
