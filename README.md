@@ -9,6 +9,10 @@ interactive analysis of code base in a legacy encoding.
 
 See [an example livebook](./sample.livemd) for usage.
 
+## Screenshot
+
+![screenshot](./screenshot.png)
+
 ## Installation
 
 The library is not available on Hex yet, so you can install from GitHub instead:
