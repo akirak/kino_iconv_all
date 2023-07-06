@@ -1209,7 +1209,8 @@ defmodule Kino.IconvAll.Git do
       target_encoding:
         Input.select(
           "Target encoding",
-          Enum.map(@supported_encodings, &{&1, &1})
+          Enum.map(@supported_encodings, &{&1, &1}),
+          default: "UTF-8"
         ),
       discard: Input.checkbox("Omit invalid characters instead of failing"),
       xml_support: Input.checkbox("Enable processing of XML (*.xml)", default: true)
