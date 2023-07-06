@@ -6,7 +6,6 @@ defmodule Kino.IconvAll.Git do
 
   alias Kino.Input
 
-  # FIXME: Add a proper list of encodings supported by iconv
   @supported_encodings [
     "437",
     "500",
