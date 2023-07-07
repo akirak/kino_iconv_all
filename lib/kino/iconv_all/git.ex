@@ -1190,30 +1190,46 @@ defmodule Kino.IconvAll.Git do
 
   >>> config = Kino.IconvAll.Git.configure("/home/user/sample-repo")
   """
-  def configure(repo) do
+  def configure(repo, opts \\ []) do
+    defaults = opts[:defaults]
+
     %{
       repo: repo,
-      pattern: Input.text("Glob pattern"),
+      pattern: Input.text("Glob pattern", default: defaults[:pattern]),
       branch:
         Input.select(
           "Branch",
           branches(repo)
           |> Enum.filter(&original_branch?(&1))
-          |> Enum.map(&{&1, &1})
+          |> Enum.map(&{&1, &1}),
+          default: defaults[:branch]
         ),
       source_encoding:
         Input.select(
           "Source encoding",
-          Enum.map(@supported_encodings, &{&1, &1})
+          Enum.map(@supported_encodings, &{&1, &1}),
+          default: defaults[:source_encoding]
         ),
       target_encoding:
         Input.select(
           "Target encoding",
           Enum.map(@supported_encodings, &{&1, &1}),
-          default: "UTF-8"
+          default: defaults[:target_encoding] || "UTF-8"
         ),
-      discard: Input.checkbox("Omit invalid characters instead of failing"),
-      xml_support: Input.checkbox("Enable processing of XML (*.xml)", default: true)
+      discard:
+        Input.checkbox(
+          "Omit invalid characters instead of failing",
+          default: defaults[:discard]
+        ),
+      xml_support:
+        Input.checkbox(
+          "Enable processing of XML (*.xml)",
+          default:
+            case defaults[:xml_support] do
+              nil -> true
+              b -> b
+            end
+        )
     }
   end
 
