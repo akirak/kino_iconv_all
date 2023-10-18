@@ -21,8 +21,8 @@ defmodule Kino.IconvAll.Git.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:kino, "~> 0.9.4"},
-      {:iconv_all_git, github: "akirak/iconv_all", tag: "0.0.2"}
+      {:kino, "~> 0.11"},
+      {:iconv_all_git, github: "akirak/iconv_all"}
     ]
   end
 end
